@@ -1,0 +1,36 @@
+{
+    "name": "idekecil/cms",
+    "license": "MIT",
+	"type": "library",
+	"keywords": ["laravel", "boilerplate","laravel package"],
+	"homepage": "https://github.com/odenktools/laravel5-package-boilerplate",	
+    "authors": [
+        {
+            "name": "Odenktools",
+            "email": "odenktools86@gmail.com",
+			"homepage": "http://odenktools.com",
+            "role": "Developer"	
+        }
+    ],	
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.1.*",
+		"illuminate/html": "5.*"
+    },
+    "autoload": {
+        "classmap": [
+			"src/Models"
+		],
+        "psr-4": {
+			"App\\": "app/",
+            "IdeKecil\\Cms\\": "packages/idekecil/cms/src/"
+        }
+    },	
+    "authors": [
+        {
+            "name": "Odenktools",
+            "email": "odenktools86@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
