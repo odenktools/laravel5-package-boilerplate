@@ -1,10 +1,10 @@
-<?php namespace IdeKecil\Cms\Http\Controllers;
+<?php namespace Odenktools\Cms\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
-abstract class IdeKecilController extends BaseController
+abstract class OdenktoolsController extends BaseController
 {
 	use DispatchesJobs, ValidatesRequests;
 	

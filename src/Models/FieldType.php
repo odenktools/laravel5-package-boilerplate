@@ -1,9 +1,9 @@
-<?php namespace IdeKecil\Cms\Models;
+<?php namespace Odenktools\Cms\Models;
 
 /**
  * 
  */
-class FieldType extends IdeKecilModel
+class FieldType extends OdenktoolsModel
 {
     /**
      * The database table used by the model.

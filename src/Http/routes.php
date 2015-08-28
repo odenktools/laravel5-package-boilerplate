@@ -10,6 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/blog', 'IdeKecil\Cms\Http\Controllers\BlogController@index');
+Route::get('/blog', 'Odenktools\Cms\Http\Controllers\BlogController@index');
 
-Route::controller('/fieldtype', 'IdeKecil\Cms\Http\Controllers\FieldTypeController');
+Route::controller('/fieldtype', 'Odenktools\Cms\Http\Controllers\FieldTypeController');
