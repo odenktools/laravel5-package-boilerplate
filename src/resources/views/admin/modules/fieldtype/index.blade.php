@@ -1,4 +1,4 @@
-@extends('idekecil::admin.layouts.master')
+@extends('odenktools::admin.layouts.master')
 
 @section('headTitle')
     FieldType

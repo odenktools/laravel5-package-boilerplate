@@ -9,10 +9,10 @@ Require this package with composer using the following command:
 
 After updating composer, add the service provider to the `providers` array in `config/app.php`
 
-	IdeKecil\Cms\IdeKecilServiceProvider::class,
+	Odenktools\Cms\OdenktoolsServiceProvider::class,
 	
 #Publish after installing
 
 You can also publish the views, assets, public folder
 
-php artisan vendor:publish --provider="IdeKecil\Cms\IdeKecilServiceProvider"
+php artisan vendor:publish --provider="Odenktools\Cms\OdenktoolsServiceProvider"

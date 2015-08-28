@@ -1,4 +1,4 @@
-@extends('idekecil::public.blog.master')
+@extends('odenktools::public.blog.master')
 
 @section('headTitle')
     IdeKecil Blog

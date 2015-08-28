@@ -12,7 +12,7 @@
     <meta content="" name="author"/>
 	<meta name="csrf-token" content="{!! csrf_token() !!}" />
 	
-    {!! Html::script('vendor/idekecil/global/plugins/jquery.min.js') !!}
+    {!! Html::script('vendor/odenktools/global/plugins/jquery.min.js') !!}
 
 </head>
 
@@ -20,13 +20,13 @@
 <body>
 
 <!-- BEGIN FOOTER -->
-@include('idekecil::public.blog.footer')
+@include('odenktools::public.blog.footer')
 <!-- END FOOTER -->
 
 <!-- END CORE PLUGINS -->
 
 <!-- START custom javascript -->
-{!! Html::script('vendor/idekecil/app/index.js') !!}
+{!! Html::script('vendor/odenktools/app/index.js') !!}
 <!-- END custom javascript -->
 
 <!-- -->

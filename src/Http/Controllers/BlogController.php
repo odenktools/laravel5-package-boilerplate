@@ -6,8 +6,8 @@ class BlogController extends PublicController
 {
 	public function index()
 	{
-        if (view()->exists('idekecil::public.blog.index')) {
-            return view('idekecil::public.blog.index');
+        if (view()->exists('odenktools::public.blog.index')) {
+            return view('odenktools::public.blog.index');
         }
 	}
 }
