@@ -2,6 +2,10 @@
 
 use Illuminate\Contracts\View\Factory as view;
 
+/**
+ * @todo
+ */
+
 class BlogController extends PublicController
 {
 	public function index()

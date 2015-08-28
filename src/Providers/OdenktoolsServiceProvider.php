@@ -1,9 +1,10 @@
-<?php
-
-namespace Odenktools\Cms\Providers;
+<?php namespace Odenktools\Cms\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * @todo
+ */
 class OdenktoolsServiceProvider extends ServiceProvider
 {
     /**
@@ -39,7 +40,24 @@ class OdenktoolsServiceProvider extends ServiceProvider
 		//After publish.. wheres my public folder are located?
         $this->publishes([
 			__DIR__. '/../public' => public_path ('vendor/odenktools'),
-        ], 'public');	
+        ], 'public');
+		
+		$this->app['auth']->extend('odenktools', function ($app)
+        {
+            // Get the model name from the auth config file 
+            // file and instantiate a new Hasher and our 
+            // PasswordUpgrader from the container.
+            $model 	= $app->config['auth.model'];
+            $hash 	= $app['hash'];
+			
+            // Instantiate our own UserProvider class.
+            $provider = new \Odenktools\Cms\Providers\OdenktoolsUserProvider($hash, $model);
+			
+            // Return a new Guard instance and pass our
+            // UserProvider class into its constructor.
+            return new \Odenktools\Cms\Providers\OdenktoolsGuard($provider, $app['session.store']);
+        });
+		
     }
 
     /**
@@ -49,10 +67,8 @@ class OdenktoolsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
 		$this->mergeConfigFrom(
 			__DIR__.'/../config/odenktools.php', 'odenktools'
 		);
-		
     }
 }

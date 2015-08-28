@@ -14,6 +14,9 @@ class FieldTypeController extends OdenktoolsController
         }
     }
 	
+	/**
+	 * @todo
+	 */	
 	public function getTestmodel()
 	{
 		$field_type = FieldType::all();

@@ -8,8 +8,8 @@ abstract class PublicController extends BaseController
 {
 	protected $_mainMenu = null;
 
-    /**
-     *
-     */
+	/**
+	 * @todo
+	 */
     public function __construct(){}
 }
