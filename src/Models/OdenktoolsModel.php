@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * IdeKecil Core Model
+ * Odenktools Core Model
  */
 class OdenktoolsModel extends Model
 {
@@ -15,7 +15,7 @@ class OdenktoolsModel extends Model
     protected $prefix = '';
 
     /**
-     * Default IdeKecil Table
+     * Default Odenktools Table
      *
      * @var array|mixed
      */
