@@ -1,4 +1,4 @@
-<?php namespace IdeKecil\Cms\Http\Controllers;
+<?php namespace Odenktools\Cms\Http\Controllers;
 
 use Illuminate\Contracts\View\Factory as view;
 

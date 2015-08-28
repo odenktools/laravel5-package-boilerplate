@@ -1,10 +1,10 @@
 <?php
 
-namespace IdeKecil\Cms;
+namespace Odenktools\Cms;
 
 use Illuminate\Support\ServiceProvider;
 
-class IdeKecilServiceProvider extends ServiceProvider
+class OdenktoolsServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -14,11 +14,11 @@ class IdeKecilServiceProvider extends ServiceProvider
     public function boot()
     {
         //Load view from
-		$this->loadViewsFrom(__DIR__.'/resources/views', 'idekecil');
+		$this->loadViewsFrom(__DIR__.'/resources/views', 'odenktools');
 		
 		//After publish.. wheres my view files are located?
 		$this->publishes([
-			__DIR__ . '/resources/views' => base_path('resources/views/vendor/idekecil'),
+			__DIR__ . '/resources/views' => base_path('resources/views/vendor/odenktools'),
         ]);
 		
 		//Setup routes for the great package
@@ -28,17 +28,17 @@ class IdeKecilServiceProvider extends ServiceProvider
 		
 		//After publish.. wheres my config file are located?
         $this->publishes([
-			__DIR__ . '/config/idekecil.php' => config_path('idekecil.php')
+			__DIR__ . '/config/odenktools.php' => config_path('odenktools.php')
         ], 'config');
 		
 		//After publish.. wheres my asset files are located?
         $this->publishes([
-			__DIR__. '/resources/assets' => base_path ('resources/assets/vendor/idekecil'),
+			__DIR__. '/resources/assets' => base_path ('resources/assets/vendor/odenktools'),
         ], 'assets');
 		
 		//After publish.. wheres my public folder are located?
         $this->publishes([
-			__DIR__. '/public' => public_path ('vendor/idekecil'),
+			__DIR__. '/public' => public_path ('vendor/odenktools'),
         ], 'public');		
     }
 
@@ -51,7 +51,7 @@ class IdeKecilServiceProvider extends ServiceProvider
     {
         //
 		$this->mergeConfigFrom(
-			__DIR__.'/config/idekecil.php', 'idekecil'
+			__DIR__.'/config/odenktools.php', 'odenktools'
 		);
 		
     }

@@ -1,8 +1,8 @@
-<?php namespace IdeKecil\Cms\Http\Controllers;
+<?php namespace Odenktools\Cms\Http\Controllers;
 
-use IdeKecil\Cms\Models\FieldType;
+use Odenktools\Cms\Models\FieldType;
 
-class FieldTypeController extends IdeKecilController
+class FieldTypeController extends OdenktoolsController
 {
     /**
      * @return void

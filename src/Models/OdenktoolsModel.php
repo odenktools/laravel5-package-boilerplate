@@ -1,11 +1,11 @@
-<?php namespace IdeKecil\Cms\Models;
+<?php namespace Odenktools\Cms\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * IdeKecil Core Model
  */
-class IdeKecilModel extends Model
+class OdenktoolsModel extends Model
 {
     /**
      * Table prefix
@@ -33,9 +33,9 @@ class IdeKecilModel extends Model
         if($defaultDb == 'mysql'){
 
             // Set the prefix
-            $this->prefix = \Config::get('idekecil.prefix');
+            $this->prefix = \Config::get('odenktools.prefix');
 
-            $this->tables = \Config::get('idekecil.tables');
+            $this->tables = \Config::get('odenktools.tables');
 
             $this->tables['user'] = $this->prefix.$this->tables['user'];
 
