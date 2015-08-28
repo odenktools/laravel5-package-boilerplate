@@ -1,5 +1,5 @@
 {
-    "name": "idekecil/cms",
+    "name": "odenktools/cms",
     "license": "MIT",
 	"type": "library",
 	"keywords": ["laravel", "boilerplate","laravel package"],
