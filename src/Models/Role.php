@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Role extends OdenktoolsModel
 {
-	use SoftDeletes;
+	//use SoftDeletes;
 	
     /**
      * The database table used by the model.
@@ -12,7 +12,16 @@ class Role extends OdenktoolsModel
      * @var string
      */
     protected $table = 'role';
+	
+	protected $dates = ['deleted_at'];
 
+	/**
+     * The attributes that aren't mass assignable.
+	 * 
+     * @var array
+     */
+    protected $guarded = ['amount', 'price'];
+	
     /**
      * The attributes that are mass assignable.
      *

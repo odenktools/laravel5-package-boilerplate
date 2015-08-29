@@ -22,6 +22,16 @@ class User extends OdenktoolsModel implements AuthenticatableContract, CanResetP
 
 	protected $hidden = ['password', 'remember_token'];
 	
+    /**
+     * @var array Validation rules
+     */
+    public $rules = [
+		'username' 	=> 'required|between:3,64',
+		'email' 	=> 'required|between:3,64|email|unique:users',
+		'password' 	=> 'required:create|between:2,32|confirmed',
+		'password_confirmation' => 'required_with:password|between:2,32'
+    ];
+	
     public function __construct(array $attributes = array())
     {
         parent::__construct($attributes);
@@ -40,6 +50,31 @@ class User extends OdenktoolsModel implements AuthenticatableContract, CanResetP
 		'is_active',
 		'verified'
 	];
+	
+    /**
+	 * From OctoberCMS
+	 * 
+     * Generate a random string
+     * @return string
+     */
+    public function getRandomString($length = 42)
+    {
+        /*
+         * Use OpenSSL (if available)
+         */
+        if (function_exists('openssl_random_pseudo_bytes')) {
+            $bytes = openssl_random_pseudo_bytes($length * 2);
+			
+            if ($bytes === false)
+			throw new RuntimeException('Unable to generate a random string');
+			
+            return substr(str_replace(['/', '+', '='], '', base64_encode($bytes)), 0, $length);
+        }
+		
+        $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		
+        return substr(str_shuffle(str_repeat($pool, 5)), 0, $length);
+    }
 	
 	/**
 	 * @todo

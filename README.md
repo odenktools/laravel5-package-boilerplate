@@ -26,8 +26,19 @@ add the Html facade to the `aliases` array in `config/app.php`
 
 You can also publish the views, assets, public folder
 
-php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider"
+	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider"
 
+Or using tag
+
+	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="views"
+	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="config"
+	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="public"
+	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="assets"
+	
+#Migration
+	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="migrations"
+	php artisan migrate
+	
 #Test
 
 navigate your browser to http://your-url/blog

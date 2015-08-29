@@ -1,11 +1,11 @@
 <?php namespace Odenktools\Cms\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as EloquentModel;
 
 /**
  * Odenktools Core Model
  */
-class OdenktoolsModel extends Model
+class OdenktoolsModel extends EloquentModel
 {
     /**
      * Table prefix
@@ -20,13 +20,25 @@ class OdenktoolsModel extends Model
      * @var array|mixed
      */
     protected $tables = array();
-
+	
+    /**
+     * @var array Make the model's attributes public so behaviors can modify them.
+     */
+    public $attributes = [];
+	
+    /**
+     * @var array List of attribute names which are json encoded and decoded from the database.
+     */
+    protected $jsonable = [];
+	
     /**
      * @param array $attributes
      */
-    public function __construct(array $attributes = array())
+    public function __construct(array $attributes = [])
     {
-        parent::__construct($attributes);
+        parent::__construct();
+		
+		$this->fill($attributes);
 
         $defaultDb = \Config::get('database.default');
 
