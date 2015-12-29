@@ -1,6 +1,6 @@
 <?php
 
-namespace Odenktools\Stoplite\Contracts;
+namespace Odenktools\Boilerplate\Contracts;
 
 interface UserRepository
 {

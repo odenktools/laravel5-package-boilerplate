@@ -20,9 +20,9 @@ class BoilerplateServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		$this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'stoplite');
+		$this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'boilerplate');
 
-		$this->loadViewsFrom(__DIR__ . '/../resources/views', 'stoplite');
+		$this->loadViewsFrom(__DIR__ . '/../resources/views', 'boilerplate');
 		
 		$this->publishViewFolder();
 	}
@@ -44,7 +44,7 @@ class BoilerplateServiceProvider extends ServiceProvider
 	 */
 	public function provides()
 	{
-		return ['stoplite'];
+		return ['boilerplate'];
 	}
 
 	/**
@@ -55,7 +55,7 @@ class BoilerplateServiceProvider extends ServiceProvider
 	private function publishViewFolder()
 	{
 		$this->publishes([
-		__DIR__ . '/../resources/views' => base_path('resources/views/vendor/odenktools'),
+		__DIR__ . '/../resources/views' => base_path('resources/views/vendor/boilerplate'),
 		], 'views');
 	}
 	
