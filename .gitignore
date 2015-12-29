@@ -4,3 +4,4 @@ composer.lock
 /backup
 .DS_Store
 .env
+*.zip

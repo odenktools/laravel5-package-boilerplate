@@ -5,7 +5,7 @@ How to create Laravel 5 package from scratch
 To install odenktools, add the following lines in your composer.json file:
 	
 	"require-dev": {
-		"odenktools/cms": "dev-master"
+		"odenktools/boilerplate": "dev-master"
 	}
 
 Save, then run it from your console
@@ -15,28 +15,20 @@ Save, then run it from your console
 #Setup
 After updating composer, add the service provider to the `providers` array in `config/app.php`
 
-	Illuminate\Html\HtmlServiceProvider::class,
-	Odenktools\Cms\Providers\OdenktoolsServiceProvider::class,
-
-add the Html facade to the `aliases` array in `config/app.php`
-
-	'Html'      => Illuminate\Html\HtmlFacade::class,
+	Odenktools\Boilerplate\BoilerplateServiceProvider::class,
 
 #Publish
 
 You can also publish the views, assets, public folder
 
-	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider"
+	php artisan vendor:publish --provider="Odenktools\Boilerplate\BoilerplateServiceProvider"
 
 Or using tag
 
-	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="views"
-	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="config"
-	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="public"
-	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="assets"
+	php artisan vendor:publish --provider="Odenktools\Boilerplate\BoilerplateServiceProvider" --tag="views"
 	
 #Migration
-	php artisan vendor:publish --provider="Odenktools\Cms\Providers\OdenktoolsServiceProvider" --tag="migrations"
+	php artisan vendor:publish --provider="Odenktools\Boilerplate\BoilerplateServiceProvider" --tag="migrations"
 	php artisan migrate
 	
 #Test
